@@ -24,7 +24,6 @@ async def post(ctx, link_post: str):
 	MAKE SURE YOUR ACCESS TOKEN IS FOR V2.7
 	'''
 	graph = facebook.GraphAPI(access_token = "<ENTER YOUR ACCESS TOKEN HERE>", version="2.7")	#Creating object for GraphAPI.
-
 	graph.put_object(parent_object = "me", connection_name = "feed", message = "#PyconIndia #PyconIndia2018 #PyCon :D ", link = link_post)	#Posts on your behalf on facebook.
 	await bot.say(":smiley: Done posting it! Glad to help you! :smiley:")	#Sends message to user on discord once posted 
 
@@ -32,7 +31,6 @@ async def post(ctx, link_post: str):
 async def info():
 	embed = discord.Embed(title="FBPost Bot", description = "Post on Facebook from Discord using this bot!")
 	embed.add_field(name="Author", value="Rahul Arulkumaran")
-
 	await bot.say(embed=embed)
 
 bot.remove_command('help')
