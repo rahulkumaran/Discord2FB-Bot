@@ -29,6 +29,9 @@ async def post(ctx, link_post: str):
 
 @bot.command()
 async def info():
+	'''
+	Gives necessary info about the bot
+	'''
 	embed = discord.Embed(title="FBPost Bot", description = "Post on Facebook from Discord using this bot!")
 	embed.add_field(name="Author", value="Rahul Arulkumaran")
 	await bot.say(embed=embed)
@@ -37,6 +40,10 @@ bot.remove_command('help')
 
 @bot.command()
 async def help():
+	'''
+	Gives the list and highlights 
+	of what each bot command does
+	'''
 	embed = discord.Embed(title="FBPost Bot", description = "Post on Facebook from Discord using this bot!")
 	embed.add_field(name="/post <post_link>", value="This command posts the given link as your status on Facebook!")
 	embed.add_field(name="/info", value="Gives a little info about the bot", inline=False)
