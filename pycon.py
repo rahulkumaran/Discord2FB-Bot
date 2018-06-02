@@ -4,7 +4,7 @@ import facebook
 from discord.ext.commands import Bot
 
 Client = discord.Client()
-bot = commands.Bot(command_prefix = "/")
+bot = commands.Bot(command_prefix = "/")	#Tells what the prefix before every command should be.
 
 @bot.event
 async def on_ready():
@@ -43,4 +43,5 @@ async def help():
 	embed.add_field(name="/help", value="Gives this message", inline=False)
 	await bot.say(embed=embed)
 
-bot.run("NDUyNDU4MTk5NDEzNjg2Mjg1.DfRt0w.lXARLomO6Em-wmOu6WVdaGp2O9E")	#Do not change this token
+if(__name__ == "__main__"):
+	bot.run("NDUyNDU4MTk5NDEzNjg2Mjg1.DfRt0w.lXARLomO6Em-wmOu6WVdaGp2O9E")	#Do not change this token
