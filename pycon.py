@@ -8,14 +8,25 @@ bot = commands.Bot(command_prefix = "/")
 
 @bot.event
 async def on_ready():
-	print("Logged in as "+ bot.user.name + " " + bot.user.id)
+	'''
+	Function to just tell us that the
+	bot is not active. Everytime you run
+	the script this will come up as a confirmation
+	'''
+	print("Confirmation that "+ bot.user.name + "(" + bot.user.id + ") is running now for you!")
 
 @bot.command(pass_context=True)
 async def post(ctx, link_post: str):
-	graph = facebook.GraphAPI(access_token = "EAACEdEose0cBAHUUH7siZCrHjohpFdZBrHhC7Y4BrHYTOWIDfurklFR7P3QBaQOr3d2KdyYoTXCmdJ8hvvucbl9ZAtld5T2pGbafqVc6Qffn1EAWYoYYSVcaimLhZCgZBsQVQZCMpZBEgAhWhPuYwPJCUJr2fPR52AkP6EyeWwWKeuohie6MVdRCJTj7sW0P9cWloO2AaVM7AZDZD", version="2.7")
+	'''
+	Command to help share a post on facebook.
+	Make sure to pass the link of the post as an argument
+	example: /post facebook.com
+	MAKE SURE YOUR ACCESS TOKEN IS FOR V2.7
+	'''
+	graph = facebook.GraphAPI(access_token = "<ENTER YOUR ACCESS TOKEN HERE>", version="2.7")	#Creating object for GraphAPI.
 
-	graph.put_object(parent_object = "me", connection_name = "feed", message = "#PyconIndia #PyconIndia2018 #PyCon :D ", link = link_post)
-	await bot.say(":smiley: Done posting it! Glad to help you! :smiley:")
+	graph.put_object(parent_object = "me", connection_name = "feed", message = "#PyconIndia #PyconIndia2018 #PyCon :D ", link = link_post)	#Posts on your behalf on facebook.
+	await bot.say(":smiley: Done posting it! Glad to help you! :smiley:")	#Sends message to user on discord once posted 
 
 @bot.command()
 async def info():
@@ -34,4 +45,4 @@ async def help():
 	embed.add_field(name="/help", value="Gives this message", inline=False)
 	await bot.say(embed=embed)
 
-bot.run("NDUyNDU4MTk5NDEzNjg2Mjg1.DfRt0w.lXARLomO6Em-wmOu6WVdaGp2O9E")
+bot.run("NDUyNDU4MTk5NDEzNjg2Mjg1.DfRt0w.lXARLomO6Em-wmOu6WVdaGp2O9E")	#Do not change this token
