@@ -51,4 +51,4 @@ async def help():
 	await bot.say(embed=embed)
 
 if(__name__ == "__main__"):
-	bot.run("NDUyNDU4MTk5NDEzNjg2Mjg1.DfRt0w.lXARLomO6Em-wmOu6WVdaGp2O9E")	#Do not change this token
+	bot.run("<ADD_YOUR_BOT_TOKEN>")	#Do not change this token
