@@ -1,1 +1,1 @@
-# Discord2FB-Bot
+# Discord2FB Bot
