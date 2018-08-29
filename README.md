@@ -1,6 +1,6 @@
 # Discord2FB Bot
 
-A bridge bot between Facebook and Discord
+A bridge bot between Facebook and Discord.
 
 # Functionality
 
